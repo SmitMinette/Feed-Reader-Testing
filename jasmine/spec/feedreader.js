@@ -1,13 +1,3 @@
-/* feedreader.js
- *
- * This is the spec file that Jasmine will read and contains
- * all of the tests that will be run against your application.
- */
-
-/* We're placing all of our tests within the $() function,
- * since some of these tests may require DOM elements. We want
- * to ensure they don't run until the DOM is ready.
- */
 $(function() {
     /* This is our first test suite - a test suite just contains
     * a related set of tests. This suite is all about the RSS
@@ -51,17 +41,20 @@ $(function() {
             menuLink.click();
             expect(menu.classList.contains('menu-hidden')).toBe(true);
         }); 
-    })
+    });
     
+    describe('Initial Entries', function() {
+        beforeEach(function(done){
+            loadFeed(0, done);
+        })
+        const feed = document.querySelector('.feed');
 
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
-          */
+        it('should have at least one entry', function(){
+            expect(feed.children.length > 0).toBe(true);
+        });
+    });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
-
+    
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
