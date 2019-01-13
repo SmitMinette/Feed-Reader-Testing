@@ -6,7 +6,7 @@ In this project we are given a web-based application that reads RSS feeds. It is
 ## How to run the app
 
 Open `index.html` in the browser of your choice. The upper part of the screen will show you the Feed Reader and the bottom half will show you the Jasmine tests.
-    * Bullet list
+
     * The Tests show the result of the Jasmine testing that was done on the application
     * If the tests are all run successfully(all dots are green), the appliction should be running as required.
     * We are testing for the following things:
